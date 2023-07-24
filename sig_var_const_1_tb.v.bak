@@ -1,0 +1,41 @@
+`timescale 1ns/1ps
+
+module sig_var_const_1_tb;
+wire [3:0] data_out;
+reg rstb,clk;
+reg [3:0] data_in;
+sig_var_const_1 sig_var_const_1_0(
+
+	.rstb(rstb),
+	.clk(clk),
+	.data_in(data_in),
+	.data_out(data_out)
+
+);
+
+
+initial
+	begin
+		rstb = 0;
+		clk = 0;
+		data_in =1;
+		#10 data_in =2;
+		#5 rstb = 1;
+		#5 data_in =3;
+		#10 data_in =4;
+		#10 data_in =5;
+		#10 data_in =6;
+		#10 data_in =7;
+		#10 data_in =8;
+		#10 data_in =9;
+		#10 data_in =10;
+		
+		
+		
+		end
+
+	always #5 clk =~clk;
+	
+	
+endmodule
+		
